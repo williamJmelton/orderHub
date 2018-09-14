@@ -3,15 +3,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  background: url(../../../assets/background.jpg) no-repeat center fixed;
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */
+.grid-container {
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: 30px 1fr;
+  grid-template-columns: 130px 1fr;
+  grid-template-areas: "titlebar  titlebar"
+                       "toolbar   content";
+}
 
-  .title {
-    color: white;
-    margin:0;
-    padding:50px 20px;
+.main {
+  grid-area: content;
+  background-color: whitesmoke;
+}
+.titlebar {
+  grid-area: titlebar;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 1px maroon;
+  -webkit-app-region: drag;
+  span {
+    margin: auto;
+    font-weight: bold;
   }
-
+}
+.toolbar {
+  grid-area: toolbar;
+  background-color: lightgray;
+  border-right: solid 1px maroon;
+  display: flex;
+  flex-direction: column;
+  a {
+    align-self: flex-end;
+    font-weight: bold;
+    color: black;
+    padding-right: 7px;
+  }
+  span {
+    color: rgb(145, 145, 145);
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-left: 6px;
+  }
 }

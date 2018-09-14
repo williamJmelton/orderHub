@@ -1,5 +1,13 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+<div class="grid-container">
+  <div class="titlebar"><span>Order Hub</span></div>
+  <div class="toolbar">
+    <span class="products-category">Products</span>
+    <a mat-button [routerLink]="['/manage-products']" routerLinkActive="router-link-active" >Manage</a>
+    <span class="products-category">Customers</span>
+    <a mat-button [routerLink]="['']" routerLinkActive="router-link-active" >New</a>
+    <a mat-button [routerLink]="['']" routerLinkActive="router-link-active" >Manage</a>
+  </div>
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
 </div>

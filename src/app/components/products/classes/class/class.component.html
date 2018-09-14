@@ -1,0 +1,70 @@
+<form ngSubmit="onUpdateClass()">
+
+    <mat-form-field appearance="standard" class="name">
+      <input matInput name="name" type="text" placeholder="Class Name" [(ngModel)]="classData.name">
+      <mat-hint align="start">Name Of Class</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select [(value)]="selectedCategory">
+        <mat-option [value]="category" *ngFor="let category of categories">{{category.name}}</mat-option>
+      </mat-select>
+      <mat-hint align="start">Pick the Category of the classData</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard" class="price">
+      <input matInput name="price" type="number" placeholder="Class Price" [(ngModel)]="classData.price">
+      <mat-hint align="start">Price of items in the class</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field style="width: 40%" appearance="standard" class="cost">
+      <input matInput name="cost" type="number" placeholder="Class Cost" [(ngModel)]="classData.cost">
+      <mat-hint align="start">Cost of items in the class</mat-hint>
+    </mat-form-field>
+
+    <!-- Unit1 select -->
+    <mat-form-field appearance="standard" class="unit1-select">
+      <mat-select [(value)]="classData.units.unit1">
+        <mat-option [value]="option" *ngFor="let option of unitOptions">{{option}}</mat-option>
+      </mat-select>
+      <mat-hint align="start">Select Unit1</mat-hint>
+    </mat-form-field>
+    <!-- unit1 Qty field -->
+    <mat-form-field appearance="standard" class="unit1Qty">
+      <input matInput [disabled]="classData.units.unit1 === ''" name="unit1Qty" type="number" placeholder="Unit1 Quantity"
+        [(ngModel)]="classData.units.unit1Qty">
+      <mat-hint align="start">Ammount of item in unit1</mat-hint>
+    </mat-form-field>
+
+    <!-- Unit2 select -->
+    <mat-form-field appearance="standard" class="unit2-select">
+      <mat-select [(value)]="classData.units.unit2">
+        <mat-option [value]="option" *ngFor="let option of unitOptions">{{option}}</mat-option>
+      </mat-select>
+      <mat-hint align="start">Select Unit2</mat-hint>
+    </mat-form-field>
+    <!-- unit2 Qty field -->
+    <mat-form-field appearance="standard" class="unit2Qty">
+      <input matInput [disabled]="classData.units.unit2 === ''" name="unit2Qty" type="number" placeholder="Unit2 Quantity"
+        [(ngModel)]="classData.units.unit2Qty">
+      <mat-hint align="start">Ammount of item in unit2</mat-hint>
+    </mat-form-field>
+
+    <!-- Unit3 select -->
+    <mat-form-field appearance="standard" class="unit3-select">
+      <mat-select [(value)]="classData.units.unit3">
+        <mat-option [value]="option" *ngFor="let option of unitOptions">{{option}}</mat-option>
+      </mat-select>
+      <mat-hint align="start">Select Unit3</mat-hint>
+    </mat-form-field>
+    <!-- unit3 Qty field -->
+    <mat-form-field appearance="standard" class="unit3Qty">
+      <input matInput [disabled]="classData.units.unit3 === ''" name="unit3Qty" type="number" placeholder="Unit3 Quantity"
+        [(ngModel)]="classData.units.unit3Qty">
+      <mat-hint align="start">Ammount of item in unit3</mat-hint>
+    </mat-form-field>
+    <div class="controls">
+      <button mat-raised-button class="addBtn" color="primary" (click)="onUpdateClass()">Save</button>
+      <button mat-raised-button class="cancelBtn" color="warn" (click)="onNoClick()">Cancel</button>
+    </div>
+  </form>

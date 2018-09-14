@@ -1,0 +1,50 @@
+table {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 0.5rem;
+}
+
+tr.mat-row {
+  height: 10px;
+}
+
+:host /deep/ .table .mat-table mat-table{
+  font-size: 2px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.highlight{
+  background: rgb(216, 0, 0) !important;
+}
+
+table > tr.mat-row {
+  :hover {
+    background-color: red;
+  }
+}
+
+.mat-row:hover {
+  background-color: rgb(253, 153, 153);
+  transition: background-color 0.5s;
+}
+
+.mat-row {
+  background-color: white;
+  transition: background-color 0.5s;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  margin: 32px;
+}

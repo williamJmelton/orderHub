@@ -1,0 +1,9 @@
+<div class="container">
+  <form ngSubmit="onAddClass()">
+      <mat-form-field style="form-field" appearance="standard" class="item-name">
+          <input matInput name="name" placeholder="Category Name" [(ngModel)]="categoryName">
+          <mat-hint align="start">Name Of Category</mat-hint>
+      </mat-form-field>
+      <button mat-button (click)="onAddCategory()">Add Category</button>
+  </form>
+</div>

@@ -1,0 +1,117 @@
+<div class="container">
+  <form ngSubmit="onUpdateProduct()">
+
+    <!-- name field -->
+    <mat-form-field appearance="standard" class="item-name">
+      <input matInput name="name" placeholder="Item Name" [(ngModel)]="product.name">
+      <mat-hint align="start">Item name</mat-hint>
+    </mat-form-field>
+
+    <!-- price field -->
+    <mat-form-field appearance="standard" class="item-price">
+      <input matInput [disabled]="product.useClassProperty" name="price" type="number" placeholder="Item Price" [(ngModel)]="product.price">
+      <mat-hint align="start">Price of Each Item</mat-hint>
+    </mat-form-field>
+
+    <!-- cost field -->
+    <mat-form-field appearance="standard" class="item-cost">
+      <input matInput [disabled]="product.useClassProperty" name="cost" type="number" placeholder="Item Cost" [(ngModel)]="product.costPrice">
+      <mat-hint align="start">Cost Of Each Item</mat-hint>
+    </mat-form-field>
+
+    <!-- category select -->
+    <mat-form-field appearance="standard" class="item-category">
+      <mat-select (selectionChange)="onCategorySelected()" [(value)]="selectedCategory">
+        <mat-option appearance="standard" [value]="category" *ngFor="let category of categories">{{category.name}}</mat-option>
+      </mat-select>
+      <mat-hint align="start">Select Item Category</mat-hint>
+    </mat-form-field>
+
+    <!-- class select -->
+    <mat-form-field appearance="standard" class="item-class">
+      <mat-select (selectionChange)="onClassSelected()" [(value)]="selectedClass" [disabled]="selectedCategory === undefined">
+        <mat-option [value]="class" *ngFor="let class of selectableClasses">{{class.name}}</mat-option>
+      </mat-select>
+      <mat-hint align="start">Select Item Class</mat-hint>
+    </mat-form-field>
+
+    <!-- Unit1 select -->
+    <mat-form-field appearance="standard" class="unit1-select">
+      <mat-select [(value)]="product.units.unit1">
+        <mat-option [value]="option" *ngFor="let option of unitOptions">{{option}}</mat-option>
+      </mat-select>
+      <mat-hint align="start">Select Unit1</mat-hint>
+    </mat-form-field>
+    <!-- unit1 Qty field -->
+    <mat-form-field appearance="standard" class="unit1Qty">
+      <input matInput [disabled]="product.units.unit1 === ''" name="unit1Qty" type="number" placeholder="Unit1 Quantity"
+        [(ngModel)]="product.units.unit1Qty">
+      <mat-hint align="start">Ammount of item in unit1</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="standard" class="unit1Barcode">
+      <input matInput [disabled]="product.units.unit1 === ''" name="unit1Barcode" type="text" placeholder="Unit1 Barcode"
+        [(ngModel)]="product.units.unit1Barcode">
+      <mat-hint align="start">Barcode for unit2</mat-hint>
+    </mat-form-field>
+
+    <!-- Unit2 select -->
+    <mat-form-field appearance="standard" class="unit2-select">
+      <mat-select [(value)]="product.units.unit2">
+        <mat-option [value]="option" *ngFor="let option of unitOptions">{{option}}</mat-option>
+      </mat-select>
+      <mat-hint align="start">Select Unit2</mat-hint>
+    </mat-form-field>
+    <!-- unit2 Qty field -->
+    <mat-form-field appearance="standard" class="unit2Qty">
+      <input matInput [disabled]="product.units.unit2 === ''" name="unit2Qty" type="number" placeholder="Unit2 Quantity"
+        [(ngModel)]="product.units.unit2Qty">
+      <mat-hint align="start">Ammount of item in unit2</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="standard" class="unit2Barcode">
+      <input matInput [disabled]="product.units.unit2 === ''" name="unit2Barcode" type="text" placeholder="Unit2 Barcode"
+        [(ngModel)]="product.units.unit2Barcode">
+      <mat-hint align="start">Barcode for unit2</mat-hint>
+    </mat-form-field>
+
+    <!-- Unit3 select -->
+    <mat-form-field appearance="standard" class="unit3-select">
+      <mat-select [(value)]="product.units.unit3">
+        <mat-option [value]="option" *ngFor="let option of unitOptions">{{option}}</mat-option>
+      </mat-select>
+      <mat-hint align="start">Select Unit3</mat-hint>
+    </mat-form-field>
+    <!-- unit3 Qty field -->
+    <mat-form-field appearance="standard" class="unit3Qty">
+      <input matInput [disabled]="product.units.unit3 === ''" name="unit3Qty" type="number" placeholder="Unit3 Quantity"
+        [(ngModel)]="product.units.unit3Qty">
+      <mat-hint align="start">Ammount of item in unit3</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="standard" class="unit3Barcode">
+      <input matInput [disabled]="product.units.unit3 === ''" name="unit3Barcode" type="text" placeholder="Unit3 Barcode"
+        [(ngModel)]="product.units.unit3Barcode">
+      <mat-hint align="start">Barcode for unit3</mat-hint>
+    </mat-form-field>
+
+    <!-- onhand field -->
+    <mat-form-field style="width: 40%" appearance="standard" class="item-onHand">
+      <input matInput name="ammount" type="number" placeholder="Item Cost" [(ngModel)]="product.onHandQty">
+      <mat-hint align="start">Ammount of item you have</mat-hint>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="standard" class="useClassPropertyField"> -->
+      <mat-checkbox name="useClassPropertyField" [(ngModel)]="product.useClassProperty">Use
+        Class Properties</mat-checkbox>
+    <!-- </mat-form-field> -->
+
+    <!-- description field -->
+    <mat-form-field appearance="standard" class="item-description">
+      <input matInput name="description" placeholder="Item Description" [(ngModel)]="product.description">
+      <mat-hint align="start">Description Of Item.</mat-hint>
+    </mat-form-field>
+  </form>
+</div>
+<!-- <mat-dialog-actions> -->
+  <div class="controls">
+    <button mat-raised-button color="primary" class="update" (click)="onUpdateProduct()">Add Product</button>
+    <button mat-raised-button color="warn" class="cancel" (click)="onNoClick();">Cancel</button>
+  </div>

@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: auto auto;
+}
+
+.half-width-field {
+  // width: 50%;
+  margin: auto auto;
+  padding: 0 10px;
+}
+
+mat-form-field {
+  margin: 8px 16px;
+}
+
+.controls {
+  padding-left: 40px;
+}
+
+form {
+  display: grid;
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  grid-template-areas: "name         name"
+                       "price        cost"
+                       "category     class"
+                       "unit1Select  unit1Qty"
+                       "unit1Barcode unit1Barcode"
+                       "unit2Select  unit2Qty"
+                       "unit2Barcode unit2Barcode"
+                       "unit3Select  unit3Qty"
+                       "unit3Barcode unit3Barcode"
+                       "qty          classProperty"
+                       "description  description";
+}
+
+.item-name {
+  grid-area: name;
+}
+
+.item-price {
+  grid-area: price;
+}
+
+.item-description {
+  grid-area: description;
+}
+
+.item-cost {
+  grid-area: cost;
+}
+
+.item-onHand {
+  grid-area: qty;
+}
+.item-class {
+  grid-area: class;
+}
+.item-category {
+  grid-area: category;
+}
+
+.divider1 {
+  grid-area: divider1;
+}
+.unit1-select {
+  grid-area: unit1Select;
+}
+.unit2-select {
+  grid-area: unit2Select;
+}
+.unit3-select {
+  grid-area: unit3Select;
+}
+
+
+.unit1Qty {
+  grid-area: unit1Qty;
+}
+.unit2Qty {
+  grid-area: unit2Qty;
+}
+.unit3Qty {
+  grid-area: unit3Qty;
+}
+
+.unit1Barcode {
+  grid-area: unit1Barcode;
+}
+.unit2Barcode {
+  grid-area: unit2Barcode;
+}
+.unit3Barcode {
+  grid-area: unit3Barcode;
+}
+
+.useClassPropertyField {
+  grid-area: classProperty;
+}
+
+
+.my-full-screen-dialog {
+  height: 100vh;
+  width: 100vw !important;
+  max-width: none !important;
+  mat-dialog-content {
+    height: 100%;
+    max-height: 100vh !important;
+  }
+}

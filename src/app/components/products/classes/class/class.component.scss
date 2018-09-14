@@ -1,0 +1,22 @@
+mat-form-field {
+  margin: 0 10px;
+  width: 50%;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  width: 100%;
+  .addBtn {
+    margin-right: auto;
+    margin-left: 140px;
+  }
+  .cancelBtn {
+    margin-left: auto;
+    margin-right: 300px;
+  }
+}

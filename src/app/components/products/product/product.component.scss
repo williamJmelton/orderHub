@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin: 16px 16px;
+  width: 100%;
+  .update {
+    align-self: flex-start;
+    margin-right: auto;
+    margin-left: 140px;
+  }
+  .cancel {
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 140px;
+  }
+}
+
+.half-width-field {
+  width: 50%;
+  margin: auto auto;
+  padding: 0 10px;
+}
+
+form {
+  display: grid;
+  width: 85%;
+  margin: 0 auto;
+  grid-template-rows: 1fr 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "name name"
+                       "price cost"
+                       "class category"
+                       "qty qty"
+                       "description description";
+  width: 800px;
+}
+
+.item-name {
+  grid-area: name;
+}
+
+.item-price {
+  grid-area: price;
+}
+
+.item-description {
+  grid-area: description;
+}
+
+.item-cost {
+  grid-area: cost;
+}
+
+.item-onHand {
+  grid-area: qty;
+}
+.item-class {
+  grid-area: class;
+}
+.item-category {
+  grid-area: category;
+}
+
+mat-form-field {
+  margin: 0 16px;
+}
