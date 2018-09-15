@@ -105,12 +105,12 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [ElectronService, DataService],
   bootstrap: [
-    AppComponent,
     ProductComponent,
     AddProductComponent,
     AddCategoryComponent,
     AddClassComponent,
-    ClassComponent
+    ClassComponent,
+    AppComponent,
   ]
 })
 export class AppModule {}

@@ -129,7 +129,7 @@ export class DataService {
         if (newCategory === category) {
           // then the category hasn't changed on the class. We
           // just need to update the classlist on this same cateory.
-          this.new
+          // this.new
         }
       });
   }

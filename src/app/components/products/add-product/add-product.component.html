@@ -37,8 +37,8 @@
       </mat-form-field>
 
       <!-- Unit1 select -->
-      <mat-form-field appearance="standard" class="unit1-select">
-        <mat-select [(value)]="newProduct.units.unit1">
+      <mat-form-field appearance="standard"  class="unit1-select">
+        <mat-select [(value)]="newProduct.units.unit1" [disabled]="useClassProperties">
           <mat-option [value]="option" *ngFor="let option of unitOptions">{{option}}</mat-option>
         </mat-select>
         <mat-hint align="start">Select Unit1</mat-hint>
